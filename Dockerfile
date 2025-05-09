@@ -17,8 +17,9 @@ COPY main.go .
 # CGO_ENABLED=0: disables Cgo to build a statically-linked binary (important for scratch/alpine images)
 # GOOS=linux: specifies the target operating system as Linux
 # -ldflags="-w -s": reduces the size of the binary by stripping debug information
-RUN CGO_ENABLED=0 GOOS=linux go build -o /app/server .
+#RUN CGO_ENABLED=0 GOOS=linux go build -o /app/server .
 
+RUN go build -o /app/server .
 # ---- Run Stage ----
 # Use a minimal image for the final stage. Alpine is small and has a shell.
 # Scratch is even smaller but has no shell or any other binaries,
