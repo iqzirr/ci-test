@@ -58,7 +58,7 @@ jobs:
       with:
         images: | # List of Docker images to use.
           # For Docker Hub: yourusername/your-image-name
-          ${{ secrets.DOCKERHUB_USERNAME }}/go-hello-world
+          rizqifireman/hello-world-github-action
           # For GitHub Container Registry: ghcr.io/yourusername/your-repo-name
           # ghcr.io/${{ github.repository_owner }}/go-hello-world
         tags: | # Docker tags
