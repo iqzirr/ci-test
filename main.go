@@ -24,7 +24,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Received request for %s from %s\n", r.URL.Path, r.RemoteAddr)
 }
 
-func helloHandler-coba(w http.ResponseWriter, r *http.Request) {
+func helloHandler_coba(w http.ResponseWriter, r *http.Request) {
 	// Get the hostname
 	hostname, err := os.Hostname()
 	if err != nil {
@@ -39,7 +39,6 @@ func helloHandler-coba(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Received request for %s from %s\n", r.URL.Path, r.RemoteAddr)
 }
 
-
 func main() {
 	// Define the port the server will listen on.
 	// You can use an environment variable or a default.
@@ -50,7 +49,7 @@ func main() {
 
 	// Register the helloHandler function to handle all requests to the root path ("/").
 	http.HandleFunc("/", helloHandler)
-	http.HandleFunc("/coba", helloHandler-coba)
+	http.HandleFunc("/coba", helloHandler_coba)
 
 	// Start the HTTP server.
 	log.Printf("Server starting on port %s...\n", port)
