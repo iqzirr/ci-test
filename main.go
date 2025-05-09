@@ -24,6 +24,22 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Received request for %s from %s\n", r.URL.Path, r.RemoteAddr)
 }
 
+func helloHandler-coba(w http.ResponseWriter, r *http.Request) {
+	// Get the hostname
+	hostname, err := os.Hostname()
+	if err != nil {
+		hostname = "unknown"
+	}
+	greetings := "Hai, belajar github action laagi cuy"
+
+	// Print a message to the response writer.
+	// This message will be sent to the client (web browser).
+	fmt.Fprintf(w, "%s \nServed by container: %s\n", greetings, hostname)
+	// Log the request to the server console
+	log.Printf("Received request for %s from %s\n", r.URL.Path, r.RemoteAddr)
+}
+
+
 func main() {
 	// Define the port the server will listen on.
 	// You can use an environment variable or a default.
@@ -34,6 +50,7 @@ func main() {
 
 	// Register the helloHandler function to handle all requests to the root path ("/").
 	http.HandleFunc("/", helloHandler)
+	http.HandleFunc("/coba", helloHandler-coba)
 
 	// Start the HTTP server.
 	log.Printf("Server starting on port %s...\n", port)
