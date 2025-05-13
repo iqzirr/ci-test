@@ -88,7 +88,9 @@ jobs:
       run: | # Using a multi-line script
         docker ps|grep hello-world-go
         if [ $? -eq 0 ]; then
+          docker pull rizqifireman/hello-world-github-action:main
           docker rm -f hello-world-go && docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
         else
+          docker pull rizqifireman/hello-world-github-action:main
           docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
         fi
