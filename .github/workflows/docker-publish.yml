@@ -86,7 +86,5 @@ jobs:
     steps:
     - name: Update and run the image
       run: | # Using a multi-line script
-        docker run -d --name hello-world-go  $USERNAME/hello-world-github-action:$TAGS
-      env:
-        USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        TAGS: ${{ steps.meta.outputs.tags }}
+        docker rm hello-world-go 
+        docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
