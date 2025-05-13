@@ -83,14 +83,15 @@ jobs:
 
   update-the-image:
     runs-on: self-hosted # Use the latest Ubuntu runner
+    needs: build-and-push
     steps:
     - name: Update and run the image
       run: | # Using a multi-line script
         docker ps|grep hello-world-go
         if [ $? -eq 0 ]; then
           docker pull rizqifireman/hello-world-github-action:main
-          docker rm -f hello-world-go && docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
+          docker rm -f hello-world-go && docker run -d --name hello-world-go -p 8080:8080 rizqifireman/hello-world-github-action:main
         else
           docker pull rizqifireman/hello-world-github-action:main
-          docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
+          docker run -d --name hello-world-go -p 8080:8080 rizqifireman/hello-world-github-action:main
         fi
