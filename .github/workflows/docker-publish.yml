@@ -86,5 +86,4 @@ jobs:
     steps:
     - name: Update and run the image
       run: | # Using a multi-line script
-        docker rm hello-world-go 
         docker run -d --name hello-world-go  rizqifireman/hello-world-github-action:main
