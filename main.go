@@ -15,7 +15,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		hostname = "unknown"
 	}
-	greetings := "Hai, belajar github action bersama iqzir"
+	greetings := "Hai, belajar github action bersama iqzir prikitiew"
 
 	// Print a message to the response writer.
 	// This message will be sent to the client (web browser).
@@ -30,7 +30,7 @@ func helloHandler_coba(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		hostname = "unknown"
 	}
-	greetings := "Hai, belajar github action laagi cuy"
+	greetings := "Hai, belajar github action lagi cuy"
 
 	// Print a message to the response writer.
 	// This message will be sent to the client (web browser).
