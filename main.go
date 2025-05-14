@@ -15,8 +15,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		hostname = "unknown"
 	}
-	greetings := "Hai, belajar github action bersama iqzir prikitiew"
 
+	greetings := "gundulhgiojdfesfgufusuyesuefdefdufdefudsuufiseduedsfudyuf89udsufuuuuuuuuu"
 	// Print a message to the response writer.
 	// This message will be sent to the client (web browser).
 	fmt.Fprintf(w, "%s \nServed by container: %s\n", greetings, hostname)
